@@ -16,7 +16,7 @@ public class ListQuery {
     public OrderCondition[] orderConditions;
 
 
-    class WhereCondition {
+    static class WhereCondition {
         public String field;
 
         public WhereConditionMethod method;

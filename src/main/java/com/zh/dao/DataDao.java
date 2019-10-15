@@ -16,7 +16,7 @@ public interface DataDao {
      * @param cellModel
      * @return
      */
-    BoxModel GetCellBoxes(CellModel cellModel);
+    BoxModel getCellBoxes(CellModel cellModel);
 
     @Select("SELECT substring_index(`position`, '-', 1) cellMapString,round(sum(`backwidth`) / 1000 , 3) totalThick,COUNT(*) totalBoxes FROM f_box GROUP BY cellMapString")
     public static void updateCellTickCache() {

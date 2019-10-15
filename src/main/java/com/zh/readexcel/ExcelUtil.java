@@ -27,28 +27,24 @@ import static org.apache.poi.hssf.usermodel.HSSFClientAnchor.MAX_ROW;
 
 /**
  * @program: readexcel
- *
  * @description:
- *
  * @author: zxb
- *
  * @create: 2019-10-12 15:55
  **/
 public class ExcelUtil {
 
     private final static Logger logger = LoggerFactory.getLogger(ExcelUtil.class);
+
     /**
-     *
-     * @param fileName  文件名
-     * @param inputStream 文件流
-     * @param map 对象中的属性名
-     *            Map<Integer, String> map = new HashMap<>();
-     *             map.put(0, "id");
-     *             map.put(1, "name");
-     *             map.put(2, "age");
-     *
+     * @param fileName       文件名
+     * @param inputStream    文件流
+     * @param map            对象中的属性名
+     *                       Map<Integer, String> map = new HashMap<>();
+     *                       map.put(0, "id");
+     *                       map.put(1, "name");
+     *                       map.put(2, "age");
      * @param dataStartIndex 开始行
-     * @param clazz 对象
+     * @param clazz          对象
      * @param <T>
      * @return
      * @throws Exception

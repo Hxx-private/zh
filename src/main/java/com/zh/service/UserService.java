@@ -35,6 +35,7 @@ public interface UserService {
 
     /**
      * 生成token
+     *
      * @param userId
      * @return
      */

@@ -1,17 +1,16 @@
-/*
 package com.zh.service.impl;
 
 import com.zh.entity.CabinetModel;
 import com.zh.entity.CellMappingModel;
 import com.zh.entity.TagMappingModel;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 import java.util.Map;
 
 import static com.zh.dao.DataDao.updateCellTickCache;
 
-@Service
+@Component
 public class DataService {
     public static CellMappingModel[] cellMapping;
 
@@ -34,4 +33,5 @@ public class DataService {
     }
 }
 
-*/
+
+
