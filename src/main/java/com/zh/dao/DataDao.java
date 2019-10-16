@@ -5,6 +5,8 @@ import com.zh.entity.CellModel;
 import org.apache.ibatis.annotations.Select;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 /**
  * @author Hxx
  */
@@ -16,11 +18,7 @@ public interface DataDao {
      * @param cellModel
      * @return
      */
-    BoxModel getCellBoxes(CellModel cellModel);
-
-    @Select("SELECT substring_index(`position`, '-', 1) cellMapString,round(sum(`backwidth`) / 1000 , 3) totalThick,COUNT(*) totalBoxes FROM f_box GROUP BY cellMapString")
-    public static void updateCellTickCache() {
-
-    }
+    @Select("SELECT * From f_box WHERE position LIKE @pos;")
+    List<BoxModel> getCellBoxes(CellModel cellModel);
 
 }

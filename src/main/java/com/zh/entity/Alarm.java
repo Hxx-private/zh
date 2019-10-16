@@ -2,9 +2,11 @@ package com.zh.entity;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.ToString;
 
 @EqualsAndHashCode(callSuper = true)
 @Data
+@ToString(callSuper = true)
 public class Alarm extends TagMappingModel {
     public String title;
     public String eventTime;

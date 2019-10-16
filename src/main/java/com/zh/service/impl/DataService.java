@@ -1,17 +1,27 @@
 package com.zh.service.impl;
 
-import com.zh.entity.CabinetModel;
-import com.zh.entity.CellMappingModel;
-import com.zh.entity.TagMappingModel;
+import ch.qos.logback.core.boolex.EvaluationException;
+import com.zh.dao.DataDao;
+import com.zh.entity.*;
+import com.zh.readexcel.readExcel;
+import lombok.Data;
+import lombok.var;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
-import static com.zh.dao.DataDao.updateCellTickCache;
-
+/**
+ * @author Hxx
+ */
+@Data
 @Component
 public class DataService {
+
+    @Autowired
+    private DataDao dataDao;
+
     public static CellMappingModel[] cellMapping;
 
     public static Map<String, CellMappingModel> dicCellMapping;
@@ -22,16 +32,35 @@ public class DataService {
 
     public static Map<String, List<TagMappingModel>> dicDeviceTagMapping;
 
-    public static CellMappingModel[] GetCellSummary(CabinetModel cabinetModel) throws Exception {
-        updateCellTickCache();
+
+    public BoxModel[] GetCellBoxes(CellModel cellModel) throws Exception {
+        Map<Integer, CellMappingModel> map = new readExcel().CellMappingread("CellMapping.xlsx");
+        if (null != DataService.cellMapping) {
+            map.forEach((key, value) -> {
+                if (value.buildingId.equals(cellModel.buildingId) && value.floorId == cellModel.floorId
+                        && value.roomId.equals(cellModel.roomId) &&
+                        value.cabinetId.equals(cellModel.cabinetId) &&
+                        value.cellId.equals(cellModel.cellId)) {
+                    CellMappingModel mappingModel = value;
+                    System.out.println(mappingModel);
+                }
+                BoxModel boxModel = new BoxModel();
+                List<BoxModel> list=dataDao.getCellBoxes(cellModel);
+                boxModel.buildingId = cellModel.buildingId;
+                boxModel.floorId = cellModel.floorId;
+                boxModel.roomId = cellModel.roomId;
+                boxModel.cabinetId = cellModel.cabinetId;
+                boxModel.cellId = cellModel.cellId;
+                boxModel.thick = 0.05d;
+                boxModel.index = -1;
+                boxModel.boxInfo = new HashMap<>();
 
 
-        return cellMapping.equals(a -> a.buildingId == cabinetModel.buildingId && a.floorId == cabinetModel.floorId
-                && a.roomId == cabinetModel.roomId &&
-                a.cabinetId == cabinetModel.cabinetId)
-                .ToArray();
+
+        });
+
     }
+
+        return null;
 }
-
-
-
+}

@@ -1,8 +1,10 @@
 package com.zh.entity;
 
 import lombok.Data;
+import lombok.ToString;
 
 @Data
+@ToString(callSuper = true)
 public class CellModel extends CabinetModel {
 
     public String cellId;
