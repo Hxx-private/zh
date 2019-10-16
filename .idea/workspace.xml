@@ -4,42 +4,7 @@
     <option name="GROUP_BY_SEVERITY" value="true" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77abfd17-3897-4fbd-b057-19de0187298e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zh/controller/Datacontroller.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zh/entity/CabinetSummaryModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zh/entity/DeviceBasicModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zh/entity/DeviceModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zh/entity/TagModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zh/readexcel/readExcel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/CellMapping.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zh/dao/DataDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zh/dao/DataDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zh/dao/impl/DataDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zh/dao/impl/DataDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zh/entity/Alarm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zh/entity/Alarm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zh/entity/BoxModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zh/entity/BoxModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zh/entity/CellMappingModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zh/entity/CellMappingModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zh/entity/CellModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zh/entity/CellModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zh/readexcel/ReadExcel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zh/service/impl/DataService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zh/service/impl/DataService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/zh/test/MyTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/zh/test/MyTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/zh/test/readExcel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zh/dao/DataDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zh/dao/DataDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zh/dao/impl/DataDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zh/dao/impl/DataDaoImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zh/entity/Alarm.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zh/entity/Alarm.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zh/entity/BoxModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zh/entity/BoxModel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zh/entity/CellMappingModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zh/entity/CellMappingModel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zh/entity/CellModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zh/entity/CellModel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zh/entity/ListQuery$WhereCondition.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zh/entity/ListQuery$WhereCondition.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zh/entity/ListQuery.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zh/entity/ListQuery.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zh/readexcel/ExcelUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zh/readexcel/ExcelUtil.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zh/readexcel/StringUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zh/readexcel/StringUtils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zh/readexcel/readExcel$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zh/readexcel/readExcel$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zh/readexcel/readExcel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zh/readexcel/readExcel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/zh/test/MyTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/zh/test/MyTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/zh/test/readExcel$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/zh/test/readExcel.class" beforeDir="false" />
-    </list>
+    <list default="true" id="77abfd17-3897-4fbd-b057-19de0187298e" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -120,7 +85,15 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.All in caBackend">
+    <configuration name="All in caBackend" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="caBackend" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="CaBackendApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="caBackend" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.zh.CaBackendApplication" />
@@ -128,6 +101,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Spring Boot.CaBackendApplication" />
+      <item itemvalue="JUnit.All in caBackend" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.All in caBackend" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -155,7 +137,7 @@
       <workItem from="1570753596643" duration="66399000" />
       <workItem from="1571101090230" duration="13754000" />
       <workItem from="1571122820392" duration="9086000" />
-      <workItem from="1571185976455" duration="10293000" />
+      <workItem from="1571185976455" duration="10602000" />
     </task>
     <task id="LOCAL-00001" summary="1014">
       <created>1571044447508</created>
