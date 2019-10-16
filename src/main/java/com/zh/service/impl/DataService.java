@@ -45,7 +45,8 @@ public class DataService {
                     System.out.println(mappingModel);
                 }
                 BoxModel boxModel = new BoxModel();
-                List<BoxModel> list=dataDao.getCellBoxes(cellModel);
+                List<BoxModel> boxModelList=dataDao.getCellBoxes(cellModel);
+                Map<String, BoxModel> map1 = (Map<String, BoxModel>) dataDao.getCellBoxes(cellModel);
                 boxModel.buildingId = cellModel.buildingId;
                 boxModel.floorId = cellModel.floorId;
                 boxModel.roomId = cellModel.roomId;
@@ -54,7 +55,22 @@ public class DataService {
                 boxModel.thick = 0.05d;
                 boxModel.index = -1;
                 boxModel.boxInfo = new HashMap<>();
+               map1.forEach((key1,value1)->
+                       {
+                           switch (key1){
+                               case "id":
+                                   boxModel.boxId = value1.boxId;
+                                   break;
+                               case "boxcode":
+                                   boxModel.boxName = value1.boxName;
+                                   break;
+                               case "position":
+                                   boxModel.index =
 
+                           }
+                       }
+
+                       );
 
 
         });

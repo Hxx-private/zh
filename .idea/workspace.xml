@@ -1310,6 +1310,8 @@
       <change afterPath="$PROJECT_DIR$/../stores/web/products/1/cs10002.jpg" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../stores/web/products/1/cs10003.jpg" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../stores/web/products/1/cs10004.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zh/service/impl/DataService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zh/service/impl/DataService.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -1443,7 +1445,7 @@
       <workItem from="1570753596643" duration="66399000" />
       <workItem from="1571101090230" duration="13754000" />
       <workItem from="1571122820392" duration="9086000" />
-      <workItem from="1571185976455" duration="10976000" />
+      <workItem from="1571185976455" duration="12496000" />
     </task>
     <task id="LOCAL-00001" summary="1014">
       <created>1571044447508</created>
@@ -1473,7 +1475,14 @@
       <option name="project" value="LOCAL" />
       <updated>1571206584712</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="备份">
+      <created>1571206686695</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1571206686695</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
