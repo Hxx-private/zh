@@ -1,6 +1,5 @@
 package com.zh.test;
 
-import com.zh.dao.impl.DataDaoImpl;
 import com.zh.entity.*;
 import com.zh.readexcel.readExcel;
 import com.zh.service.impl.DataService;
@@ -25,7 +24,6 @@ public class MyTest {
     @Autowired
     private CellModel cellModel;
 @Autowired
-private DataDaoImpl dataDao;
     @Test
     public void Token() {
 
@@ -60,8 +58,7 @@ private DataDaoImpl dataDao;
 @Test
     public void test() throws Exception {
         Map<Integer, CellMappingModel> map = new readExcel().CellMappingread("CellMapping.xlsx");
-    System.out.println("jinll");
-        if (null!=DataService.cellMapping) {
+        if (null!=DataEntity.cellMapping) {
         System.out.println("kasih");
         map.forEach((key, value) -> {
             if (value.buildingId == cellModel.buildingId && value.floorId == cellModel.floorId
