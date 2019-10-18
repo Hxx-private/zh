@@ -1,20 +1,21 @@
 package com.zh.dao;
 
 import com.zh.entity.DocumentModel;
-import org.apache.ibatis.annotations.Result;
-import org.apache.ibatis.annotations.Results;
+import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 import org.springframework.stereotype.Repository;
+
+import java.util.List;
+import java.util.Map;
 
 /**
  * @author Hxx
  */
-@Repository
+@Mapper
 public interface DataDao {
-
     /**
      * 获取盒全部文档信息
-     *
      * @param boxId
      * @param pageIndex
      * @param pageItemCount
@@ -22,16 +23,8 @@ public interface DataDao {
      * @return
      */
 
-    @Select("select * from f_document where boxid=@boxid order by doccode limit @itemStart,@itemCount;")
-    @Results(id = "doc", value = {
-            @Result(property = "boxid", column = ""),
-            @Result(property = "", column = ""),
-            @Result(property = "", column = ""),
-            @Result(property = "", column = ""),
-            @Result(property = "", column = ""),
-
-            })
-    public DocumentModel[] GetDocumentsByBoxId(long boxId, int pageIndex, int pageItemCount, int tCount);
+    @Select("select * from f_document where id=#{doc.boxId} order by doccode limit #{itemStart},#{itemCount};")
+    public  List<Map<String,Object>> GetDocumentsbyBoxId(long boxId, int pageIndex, int pageItemCount, int tCount);
 
 
 }

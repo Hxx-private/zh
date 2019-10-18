@@ -6,7 +6,7 @@ import lombok.Data;
  * @author Hxx
  */
 @Data
-public class PagedData {
+public class PagedDataModel {
     public int pageIndex;
     public int pageItemCount;
     public int totalCount;

@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletResponse;
-import javax.xml.crypto.Data;
 import java.util.Map;
 
 /**
@@ -26,7 +25,7 @@ public class Datacontroller {
     public static BoxModel[] GetCellBoxes(@RequestBody CellModel cellModel, HttpServletResponse response) throws Exception {
         Map<Integer, CellMappingModel> map = new readExcel().CellMappingread("CellMapping.xlsx");
 
-        if (null != DataService.cellMapping) {
+        if (null != DataEntity.cellMapping) {
             map.forEach((key, value) -> {
                 if (value.buildingId.equals(cellModel.buildingId) && value.floorId == cellModel.floorId
                         && value.roomId.equals(cellModel.roomId) &&
@@ -88,7 +87,7 @@ public class Datacontroller {
 
             String cellPos = rawBoxInfo.position.substring(0,len);
 
-            DataService.dicCellMapping.forEach((key,value)->{
+            DataEntity.dicCellMapping.forEach((key,value)->{
                 if (!value.cellMapString.equals(cellPos))
                 {
                     res.message = "cell 位置信息 (cellMapString) 信息不存在 [" + cellPos + "]";
