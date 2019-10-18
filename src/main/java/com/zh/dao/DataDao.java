@@ -1,11 +1,10 @@
 package com.zh.dao;
 
-import com.zh.entity.BoxModel;
-import com.zh.entity.CellModel;
+import com.zh.entity.DocumentModel;
+import org.apache.ibatis.annotations.Result;
+import org.apache.ibatis.annotations.Results;
 import org.apache.ibatis.annotations.Select;
 import org.springframework.stereotype.Repository;
-
-import java.util.List;
 
 /**
  * @author Hxx
@@ -14,11 +13,25 @@ import java.util.List;
 public interface DataDao {
 
     /**
-     * 获取节全部BOX信息
-     * @param cellModel
+     * 获取盒全部文档信息
+     *
+     * @param boxId
+     * @param pageIndex
+     * @param pageItemCount
+     * @param tCount
      * @return
      */
-    @Select("SELECT * From f_box WHERE position LIKE @pos;")
-    List<BoxModel> getCellBoxes(CellModel cellModel);
+
+    @Select("select * from f_document where boxid=@boxid order by doccode limit @itemStart,@itemCount;")
+    @Results(id = "doc", value = {
+            @Result(property = "boxid", column = ""),
+            @Result(property = "", column = ""),
+            @Result(property = "", column = ""),
+            @Result(property = "", column = ""),
+            @Result(property = "", column = ""),
+
+            })
+    public DocumentModel[] GetDocumentsByBoxId(long boxId, int pageIndex, int pageItemCount, int tCount);
+
 
 }

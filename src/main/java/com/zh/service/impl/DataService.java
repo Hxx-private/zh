@@ -19,12 +19,9 @@ import java.util.*;
 @Component
 public class DataService {
 
-    @Autowired
-    private DataDao dataDao;
-
     public static CellMappingModel[] cellMapping;
 
-    public static Map<String, CellMappingModel> dicCellMapping;
+    public static Map<Integer, CellMappingModel> dicCellMapping;
 
     public static TagMappingModel[] tagMapping;
 
@@ -33,7 +30,7 @@ public class DataService {
     public static Map<String, List<TagMappingModel>> dicDeviceTagMapping;
 
 
-    public BoxModel[] GetCellBoxes(CellModel cellModel) throws Exception {
+   /* public BoxModel[] GetCellBoxes(CellModel cellModel) throws Exception {
         Map<Integer, CellMappingModel> map = new readExcel().CellMappingread("CellMapping.xlsx");
         if (null != DataService.cellMapping) {
             map.forEach((key, value) -> {
@@ -79,4 +76,25 @@ public class DataService {
 
         return null;
 }
+*/
+
+    public static BoxModel GetBoxDetailInfoByIdAndPosition(String id, String cellPos) {
+        BoxModel resModel = new BoxModel();
+        resModel.setBoxId(id);
+        dicCellMapping.forEach((key, value) -> {
+            if (value.cellMapString.equals(cellPos)) {
+               var item = dicCellMapping.get(cellPos);
+                resModel.buildingId = item.buildingId;
+                resModel.floorId = item.floorId;
+                resModel.roomId = item.roomId;
+                resModel.cabinetId = item.cabinetId;
+                resModel.cellId = item.cellId;
+            }
+        });
+
+
+        return resModel;
+    }
+
+
 }

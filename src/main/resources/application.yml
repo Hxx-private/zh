@@ -4,7 +4,7 @@ spring:
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://127.0.0.1:3306/thams?useUnicode=true&characterEncoding=UTF-8&useSSL=false
+    url: jdbc:mysql://47.93.25.57:3306/thams?useUnicode=true&characterEncoding=UTF-8&useSSL=false
     username: root
     password: 1234
     dbcp2:

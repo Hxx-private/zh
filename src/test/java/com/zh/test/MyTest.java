@@ -1,35 +1,25 @@
 package com.zh.test;
 
-import com.zh.dao.DataDao;
 import com.zh.dao.impl.DataDaoImpl;
 import com.zh.entity.*;
 import com.zh.readexcel.readExcel;
-import com.zh.service.UserService;
 import com.zh.service.impl.DataService;
 import com.zh.utils.JwtUtils;
-import lombok.ToString;
-import org.joda.time.DateTime;
-import org.joda.time.format.DateTimeFormat;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
-import org.springframework.data.mongodb.core.query.Criteria;
-import org.springframework.data.mongodb.core.query.Query;
 
 import java.time.Instant;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
-import java.time.format.DateTimeFormatter;
-import java.util.Date;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 public class MyTest {
     @Autowired
     private Alarm alarm;
     @Autowired
-    private ListQuery query;
+    private ListQueryModel query;
     @Autowired
     private MongoTemplate mongoTemplate;
     @Autowired

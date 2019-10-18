@@ -6,7 +6,7 @@ import lombok.Data;
  * @author Hxx
  */
 @Data
-public class ListQuery {
+public class ListQueryModel {
     public int pageIndex;
 
     public int pageItemCount;
@@ -15,7 +15,7 @@ public class ListQuery {
 
     public OrderCondition[] orderConditions;
 
-
+    @Data
     static class WhereCondition {
         public String field;
 
@@ -23,6 +23,7 @@ public class ListQuery {
 
         public Object value;
     }
+
 
     enum WhereConditionMethod {
         EQUAL,
@@ -36,7 +37,7 @@ public class ListQuery {
         BTWEEN_LIST
     }
 
-
+    @Data
     class OrderCondition {
         public String field;
         public OrderConditionMethod method;

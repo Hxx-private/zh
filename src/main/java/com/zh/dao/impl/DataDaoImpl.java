@@ -3,19 +3,28 @@ package com.zh.dao.impl;
 import com.zh.dao.DataDao;
 import com.zh.entity.BoxModel;
 import com.zh.entity.CellModel;
+import com.zh.entity.DocumentModel;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
-
+@Repository
 public class DataDaoImpl implements DataDao {
+
+
     /**
-     * 获取节全部BOX信息
+     * 获取盒全部文档信息
      *
-     * @param cellModel
+     * @param boxId
+     * @param pageIndex
+     * @param pageItemCount
+     * @param tCount
      * @return
      */
     @Override
-    public List<BoxModel> getCellBoxes(CellModel cellModel) {
-        System.out.println("dao*******"+cellModel);
-        return (List<BoxModel>) cellModel;
+    public DocumentModel[] GetDocumentsByBoxId(long boxId, int pageIndex, int pageItemCount, int tCount) {
+
+
+
+        return new DocumentModel[0];
     }
 }
