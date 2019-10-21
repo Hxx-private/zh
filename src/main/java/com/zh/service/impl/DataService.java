@@ -1,18 +1,14 @@
 package com.zh.service.impl;
 
-import com.zh.dao.DataDao;
 import com.zh.entity.*;
 import lombok.var;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Component;
 
 /**
  * @author Hxx
  */
-@Service
+@Component
 public class DataService {
-    @Autowired
-    private DataDao dataDao;
     public static BoxModel GetBoxDetailInfoByIdAndPosition(String id, String cellPos) {
         BoxModel resModel = new BoxModel();
         resModel.setBoxId(id);
@@ -31,7 +27,7 @@ public class DataService {
         return resModel;
     }
 
-    public static ResModel GetDocumentsbyBoxId(ListQueryModel query) {
+    public  ResModel GetDocumentsbyBoxId(ListQueryModel query) {
         ResModel res = new ResModel();
         res.setCode(200);
         long boxid = 0;
@@ -45,7 +41,6 @@ public class DataService {
                     }
 
 
-                    //dataDao.GetDocumentsbyBoxId(boxid,query.pageIndex,query.pageItemCount,tCount);
                 }
 
             }

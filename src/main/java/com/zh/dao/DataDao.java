@@ -12,7 +12,7 @@ import java.util.Map;
 /**
  * @author Hxx
  */
-@Mapper
+@Repository
 public interface DataDao {
     /**
      * 获取盒全部文档信息

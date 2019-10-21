@@ -1,4 +1,4 @@
-package com.zh.utils;
+package com.zh.config;
 
 
 import com.zh.entity.DataModel;
