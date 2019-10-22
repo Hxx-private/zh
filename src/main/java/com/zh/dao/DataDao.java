@@ -1,8 +1,5 @@
 package com.zh.dao;
 
-import com.zh.entity.DocumentModel;
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 import org.springframework.stereotype.Repository;
 
@@ -16,6 +13,7 @@ import java.util.Map;
 public interface DataDao {
     /**
      * 获取盒全部文档信息
+     *
      * @param boxId
      * @param pageIndex
      * @param pageItemCount
@@ -24,7 +22,7 @@ public interface DataDao {
      */
 
     @Select("select * from f_document where id=#{doc.boxId} order by doccode limit #{itemStart},#{itemCount};")
-    public  List<Map<String,Object>> GetDocumentsbyBoxId(long boxId, int pageIndex, int pageItemCount, int tCount);
+    public List<Map<String, Object>> GetDocumentsbyBoxId(long boxId, int pageIndex, int pageItemCount, int tCount);
 
 
 }

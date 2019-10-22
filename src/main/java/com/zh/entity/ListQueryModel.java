@@ -13,7 +13,7 @@ public class ListQueryModel {
 
     public WhereCondition[] whereConditions;
 
-    public OrderCondition[] orderConditions;
+     public OrderCondition[] orderConditions;
 
 }
 

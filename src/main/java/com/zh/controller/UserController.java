@@ -58,7 +58,10 @@ public class UserController {
      * @return
      */
     @PostMapping("/user/addUser")
-    public AjaxResponse addUser(@RequestBody User user) throws Exception {
+    public AjaxResponse addUser(@RequestBody User user ,HttpServletResponse response) throws Exception {
+        String token = userService.getToken(user.userId);
+        response.setHeader("authorization", token);
+        response.setHeader("Access-Control-Expose-Headers", "authorization");
         User user1 = new User();
         user1.setUserId(user.getUserId());
 
