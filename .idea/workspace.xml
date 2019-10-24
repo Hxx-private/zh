@@ -15,8 +15,6 @@
       <change afterPath="$PROJECT_DIR$/../activemq_boot_queue/src/main/java/com/zhonghuan/activemq_boot_queue/ActivemqBootQueueApplication.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../activemq_boot_queue/src/main/resources/application.yml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../activemq_boot_queue/src/test/java/com/zhonghuan/activemq_boot_queue/ActivemqBootQueueApplicationTests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zh/config/Appconfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/zhpublic" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../luntan/.idea/artifacts/luntan.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../luntan/.idea/compiler.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../luntan/.idea/dataSources.xml" afterDir="false" />
@@ -1312,59 +1310,6 @@
       <change afterPath="$PROJECT_DIR$/../stores/web/products/1/cs10002.jpg" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../stores/web/products/1/cs10003.jpg" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../stores/web/products/1/cs10004.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_5_5_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.mvn/wrapper/MavenWrapperDownloader.java" beforeDir="false" afterPath="$PROJECT_DIR$/.mvn/wrapper/MavenWrapperDownloader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TagMapping.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/caBackend.iml" beforeDir="false" afterPath="$PROJECT_DIR$/caBackend.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvnw" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvnw.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zh/CaBackendApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zh/CaBackendApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zh/config/WebConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zh/config/WebConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zh/controller/Datacontroller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zh/controller/Datacontroller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zh/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zh/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zh/dao/DataDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zh/dao/DataDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zh/dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zh/dao/UserDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zh/dao/impl/DataDaoImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zh/dao/impl/UserDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zh/dao/impl/UserDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zh/entity/Alarm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zh/entity/Alarm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zh/entity/AlarmRaw.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zh/entity/AlarmRaw.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zh/entity/BoxModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zh/entity/BoxModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zh/entity/CabinetModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zh/entity/CabinetModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zh/entity/CellMappingModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zh/entity/CellMappingModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zh/entity/CellModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zh/entity/CellModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zh/entity/DeviceMapping.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zh/entity/DeviceMapping.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zh/entity/ListQuery.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zh/entity/PagedData.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zh/entity/ResModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zh/entity/ResModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zh/entity/TagMappingModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zh/entity/TagMappingModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zh/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zh/entity/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zh/interceptor/JWTInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zh/interceptor/JWTInterceptor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zh/readexcel/ExcelUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zh/readexcel/ExcelUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zh/readexcel/StringUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zh/readexcel/StringUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zh/readexcel/readExcel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zh/readexcel/readExcel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zh/service/DataService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zh/service/DataService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zh/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zh/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zh/service/impl/DataService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zh/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zh/service/impl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zh/utils/AESUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zh/utils/AESUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zh/utils/AjaxResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zh/utils/AjaxResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zh/utils/JwtUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zh/utils/JwtUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/zh/CaBackendApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/zh/CaBackendApplicationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/zh/test/MyTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/zh/test/MyTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/zh/test/readExcel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zh/CaBackendApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zh/CaBackendApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zh/controller/Datacontroller.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zh/controller/Datacontroller.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zh/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zh/controller/UserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zh/dao/DataDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zh/dao/DataDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zh/service/DataService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zh/service/DataService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zh/utils/AESUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zh/utils/AESUtils.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -1390,6 +1335,11 @@
       </list>
     </option>
     <option name="PUSH_AUTO_UPDATE" value="true" />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="ROOT_SYNC" value="DONT_SYNC" />
     <option name="WARN_ABOUT_DETACHED_HEAD" value="false" />
@@ -1475,6 +1425,7 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.All in caBackend" />
         <item itemvalue="JUnit.All in caBackend" />
       </list>
     </recent_temporary>
