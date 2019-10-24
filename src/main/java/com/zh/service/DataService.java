@@ -1,15 +1,19 @@
 package com.zh.service;
 
+
+import com.zh.config.Appconfig;
 import com.zh.dao.DataDao;
 import com.zh.entity.*;
-import lombok.ToString;
-import lombok.val;
 import lombok.var;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.io.*;
+import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.Random;
 
 /**
@@ -19,6 +23,8 @@ import java.util.Random;
 public class DataService {
     @Autowired
     private DataDao dataDao;
+    @Autowired
+    Appconfig appconfig;
 
     public static BoxModel GetBoxDetailInfoByIdAndPosition(String id, String cellPos) {
         BoxModel resModel = new BoxModel();
@@ -75,10 +81,11 @@ public class DataService {
     }
 
     /**
-     *获取测试参数信息
+     * 获取测试参数信息
+     *
      * @return
      */
-    public  ResModel getTestTags() {
+    public ResModel getTestTags() {
         ResModel res = new ResModel();
         res.setCode(200);
         try {
@@ -102,7 +109,7 @@ public class DataService {
                 tag.val = testTag.contains("t") ? tval : hval;
                 tagList.add(tag);
             }
-            int _rnd = rnd.nextInt(2)+1;
+            int _rnd = rnd.nextInt(2) + 1;
             if (_rnd == 1) {
                 throw new Exception("异常测试");
             }
@@ -110,7 +117,57 @@ public class DataService {
             res.isSuccess = true;
             res.message = "成功获取数据.";
         } catch (Exception ex) {
-            res.message=ex.getMessage();
+            res.message = ex.getMessage();
+            res.isSuccess = false;
+        }
+
+        return res;
+    }
+
+
+    public String getViewPdfName(String edocId) {
+
+        String path = "";
+        List<Map<String, Object>> filePath = dataDao.getFilePath(edocId);
+        for (int i = 0; i < filePath.size(); i++) {
+            Map<String, Object> map = filePath.get(i);
+            String filepath = (String) map.get("filepath");
+            String savefilename = (String) map.get("savefilename");
+            String extension = (String) map.get("extension");
+            path = filepath.replace("/", "\\") + savefilename.replace("." + extension, "_show.pdf");
+        }
+        return path;
+    }
+
+    /**
+     * 获取电子文件PDF档
+     *
+     * @param eDocId
+     * @return
+     */
+    public ResModel getPdfShowFile(String eDocId) {
+        ResModel res = new ResModel();
+        res.setCode(200);
+        try {
+            String rootPath = appconfig.getPdfRootPath() == null ? "D:" : appconfig.getPdfRootPath();
+            String path = getViewPdfName(eDocId);
+            String filePath = rootPath + path;
+            File file = new File(filePath);
+            //BufferedReader br = new BufferedReader(new FileReader(file));
+            BufferedReader br=new BufferedReader(new InputStreamReader(new FileInputStream(file),"UTF-8"));
+            if (path != null && file.exists()) {
+
+                res.data =br.lines();
+                res.message = file.getName();
+                res.isSuccess = true;
+            } else {
+                res.data = null;
+                res.message = "不存在PDF电子档文件";
+                res.isSuccess = false;
+            }
+        } catch (Exception ex) {
+            res.data = null;
+            res.message = ex.getMessage();
             res.isSuccess = false;
         }
 

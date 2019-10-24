@@ -47,6 +47,11 @@ public class UserController {
             result.put("message", "登录成功");
             result.put("code", 200);
             result.put("data", user);
+        }else {
+            result.put("isSuccess", false);
+            result.put("message", "登录失败");
+            result.put("code", 500);
+            return result;
         }
         return result;
     }

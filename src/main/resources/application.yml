@@ -17,3 +17,5 @@ spring:
       uri: mongodb://192.168.0.51:27017/cyberArchive
   resources:
         static-locations: classpath:/static/, classpath:/templates/
+
+  pdfRootPath: D:\\images

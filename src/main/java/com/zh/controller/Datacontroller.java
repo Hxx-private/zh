@@ -1,5 +1,6 @@
 package com.zh.controller;
 
+import com.zh.config.Appconfig;
 import com.zh.entity.*;
 import com.zh.readexcel.readExcel;
 import com.zh.service.DataService;
@@ -8,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletResponse;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -20,6 +22,8 @@ import java.util.Map;
 public class Datacontroller {
     @Autowired
     private DataService dataService;
+    @Autowired
+    Appconfig appconfig;
 
     @PostMapping(value = "/data/GetCellBoxes", produces = "application/json")
     public static BoxModel[] GetCellBoxes(@RequestBody CellModel cellModel, HttpServletResponse response) throws Exception {
@@ -44,72 +48,73 @@ public class Datacontroller {
 
                     }
                 }
-                });
-            }
-            return null;
+            });
+        }
+        return null;
+    }
+
+    @PostMapping(value = "/data/GetBoxDetailInfoByIdAndPosition", produces = "application/json")
+    public static ResModel GetBoxDetailInfoByIdAndPosition(@RequestBody BoxInfo rawBoxInfo, HttpServletResponse
+            response) {
+        String token = TokenUtils.getToken("rawBoxInfo.id");
+        //设置请求头
+        response.setHeader("authorization", token);
+        response.setHeader("Access-Control-Expose-Headers", "authorization");
+        ResModel res = new ResModel();
+        res.setCode(200);
+
+        if (null == rawBoxInfo) {
+            res.message = "未提供有效的数据";
         }
 
-        @PostMapping(value = "/data/GetBoxDetailInfoByIdAndPosition", produces = "application/json")
-        public static ResModel GetBoxDetailInfoByIdAndPosition (@RequestBody BoxInfo rawBoxInfo, HttpServletResponse
-        response){
-            String token = TokenUtils.getToken("rawBoxInfo.id");
-            //设置请求头
-            response.setHeader("authorization", token);
-            response.setHeader("Access-Control-Expose-Headers", "authorization");
-            ResModel res = new ResModel();
-            res.setCode(200);
-
-            if (null == rawBoxInfo) {
-                res.message = "未提供有效的数据";
-            }
-
-            if (0 == rawBoxInfo.id || null == rawBoxInfo.position) {
-                System.out.println(rawBoxInfo.position);
-                System.out.println(rawBoxInfo.id);
-                System.out.println(rawBoxInfo.backwidth);
-                System.out.println(rawBoxInfo.boxcode);
-                res.message = "必须提供档案盒 id 和 位置信息 (position)";
-                return res;
-            }
-
-            try {
-                int len = rawBoxInfo.position.lastIndexOf('-');
-
-                if (rawBoxInfo.position.length() <= 2 && len < 0) {
-
-                    res.message = "位置信息 (position) 格式不正确 [" + rawBoxInfo.position + "]";
-                    return res;
-                }
-
-
-                String cellPos = rawBoxInfo.position.substring(0, len);
-
-                DataEntity.dicCellMapping.forEach((key, value) -> {
-                    if (!value.cellMapString.equals(cellPos)) {
-                        res.message = "cell 位置信息 (cellMapString) 信息不存在 [" + cellPos + "]";
-                    }
-                });
-
-                res.data = DataService.GetBoxDetailInfoByIdAndPosition(String.valueOf(rawBoxInfo.id), cellPos);
-                res.message = "成功获取数据.";
-                res.isSuccess = true;
-                return res;
-            } catch (Exception ex) {
-                res.message = ex.getMessage();
-                res.isSuccess = false;
-                ex.printStackTrace();
-            }
-
+        if (0 == rawBoxInfo.id || null == rawBoxInfo.position) {
+            System.out.println(rawBoxInfo.position);
+            System.out.println(rawBoxInfo.id);
+            System.out.println(rawBoxInfo.backwidth);
+            System.out.println(rawBoxInfo.boxcode);
+            res.message = "必须提供档案盒 id 和 位置信息 (position)";
             return res;
         }
 
+        try {
+            int len = rawBoxInfo.position.lastIndexOf('-');
+
+            if (rawBoxInfo.position.length() <= 2 && len < 0) {
+
+                res.message = "位置信息 (position) 格式不正确 [" + rawBoxInfo.position + "]";
+                return res;
+            }
+
+
+            String cellPos = rawBoxInfo.position.substring(0, len);
+
+            DataEntity.dicCellMapping.forEach((key, value) -> {
+                if (!value.cellMapString.equals(cellPos)) {
+                    res.message = "cell 位置信息 (cellMapString) 信息不存在 [" + cellPos + "]";
+                }
+            });
+
+            res.data = DataService.GetBoxDetailInfoByIdAndPosition(String.valueOf(rawBoxInfo.id), cellPos);
+            res.message = "成功获取数据.";
+            res.isSuccess = true;
+            return res;
+        } catch (Exception ex) {
+            res.message = ex.getMessage();
+            res.isSuccess = false;
+            ex.printStackTrace();
+        }
+
+        return res;
+    }
+
     /**
      * 获取盒全部文档信息
+     *
      * @param query
      * @return
      */
     @PostMapping(value = "/data/getBoxDocuments", produces = "application/json")
-    public ResModel getBoxDocuments(@RequestBody ListQueryModel query){
+    public ResModel getBoxDocuments(@RequestBody ListQueryModel query) {
 
         return dataService.GetDocumentsbyBoxId(query);
 
@@ -117,11 +122,11 @@ public class Datacontroller {
 
     /**
      * 获取测试参数信息
+     *
      * @return
      */
     @PostMapping(value = "/data/getTestTag", produces = "application/json")
-    public ResModel getTestTags(HttpServletResponse response)
-    {
+    public ResModel getTestTags(HttpServletResponse response) {
         String token = TokenUtils.getToken("rawBoxInfo.id");
         //设置请求头
         response.setHeader("authorization", token);
@@ -130,5 +135,59 @@ public class Datacontroller {
     }
 
 
+    /**
+     * 获取电子文件PDF档
+     * @param eDocId
+     * @param response
+     */
+    @GetMapping(value = "/data/getPdfShowFile/{eDocId}", produces = "application/json")
+    public void getPdfShowFile(@PathVariable String eDocId, HttpServletResponse response) {
+
+        {   //获取本地路径
+            String rootPath = appconfig.getPdfRootPath() == null ? "D:" : appconfig.getPdfRootPath();
+            String path = dataService.getViewPdfName(eDocId);
+            //获取文件的完整路径
+            String filePath = rootPath + path;
+            File file = new File(filePath);
+            ResModel res = dataService.getPdfShowFile(eDocId);
+            if (file.exists()) {
+                // 设置强制下载不打开
+                response.setContentType("application/force-download");
+                response.addHeader("Content-Disposition", "attachment;fileName=" + res.message);
+                byte[] buffer = new byte[1024];
+                FileInputStream fis = null;
+                BufferedInputStream bis = null;
+                try {
+                    fis = new FileInputStream(file);
+                    bis = new BufferedInputStream(fis);
+                    OutputStream outputStream = response.getOutputStream();
+                    int i = bis.read(buffer);
+                    while (i != -1) {
+                        outputStream.write(buffer, 0, i);
+                        i = bis.read(buffer);
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                } finally {
+                    if (bis != null) {
+                        try {
+                            bis.close();
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                    if (fis != null) {
+                        try {
+                            fis.close();
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }
+            }
+        }
+
     }
+}
+
 

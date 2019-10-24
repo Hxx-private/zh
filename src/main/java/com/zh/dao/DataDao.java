@@ -25,4 +25,6 @@ public interface DataDao {
     public List<Map<String, Object>> GetDocumentsbyBoxId(long boxId, int pageIndex, int pageItemCount, int tCount);
 
 
+    @Select("SELECT filepath,savefilename,extension FROM e_record WHERE id = #{id};")
+    public  List<Map<String,Object>>  getFilePath(String eDocId);
 }

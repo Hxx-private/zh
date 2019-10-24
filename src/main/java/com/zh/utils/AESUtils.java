@@ -35,7 +35,7 @@ public class AESUtils {
             return null;
         }
         if (key.length() != 16) {
-            System.out.print("Key的长度不是12位");
+            System.out.print("Key的长度不是16位");
             return null;
         }
         Cipher cipher = Cipher.getInstance("AES/ECB/PKCS5Padding");

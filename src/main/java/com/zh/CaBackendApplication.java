@@ -12,9 +12,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 @SpringBootApplication
 @MapperScan(basePackages = "com.zh.*")
 public class CaBackendApplication {
-
     public static void main(String[] args) {
         SpringApplication.run(CaBackendApplication.class, args);
     }
-
 }
